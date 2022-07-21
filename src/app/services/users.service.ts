@@ -1,9 +1,18 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
+import {User} from '../interfaces/user.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsersService {
 
-  constructor() { }
+  private users: User[];
+  private apiUrl: string;
+
+  constructor () {
+    this.users = [];
+    this.apiUrl = 'https://home-training.herokuapp.com/api/users/';
+  }
+
+
 }
