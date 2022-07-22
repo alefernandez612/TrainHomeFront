@@ -8,13 +8,11 @@ import {User} from '../interfaces/user.interface';
 })
 export class UsersService {
 
-  private users: User[];
   private apiUrl: string;
 
   constructor (
     private httpClient: HttpClient
   ) {
-    this.users = [];
     this.apiUrl = 'https://home-training.herokuapp.com/api/users/';
   }
 
@@ -27,6 +25,12 @@ export class UsersService {
   }
 
   register(form: any): Promise<User> {
-    return lastValueFrom(this.httpClient.post<User>(this.apiUrl, form));
+    return lastValueFrom(this.httpClient.post<User>(`${this.apiUrl}register`, form));
+  }
+
+  login(values: {username: string, password: string;}): Promise<any> {
+    return lastValueFrom(
+      this.httpClient.post<any>(`${this.apiUrl}login`, values)
+    );
   }
 }
