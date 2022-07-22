@@ -13,6 +13,7 @@ import {LoginComponent} from './components/login/login.component';
 import {RegisterComponent} from './components/register/register.component';
 
 import {AuthTokenInterceptor} from './interceptors/auth-token.interceptor';
+import { HeroComponent } from './components/hero/hero.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {AuthTokenInterceptor} from './interceptors/auth-token.interceptor';
     LoginComponent,
     HomeComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    HeroComponent
   ],
   imports: [
     BrowserModule,
